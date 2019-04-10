@@ -1,9 +1,10 @@
 # Joint
 
+#### 兼容低版本ie
 ### joint.js -跳转拼接
 ### joint2.js -不跳转拼接
 
-#### 兼容低版本ie
+
 
 #### 使用方法：
 joint.js:
