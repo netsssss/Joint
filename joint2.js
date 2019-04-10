@@ -16,7 +16,7 @@ var joint2 = {
         if (this.get(name)) {
             var temp = encodeURI(encodeURI(name)) + '=' + encodeURI(encodeURI(this.get(name)));
             this._init();
-            var params = this._search.indexOf(temp) > -1 ? this._search.replace((this._search.substring(this._search.indexOf(temp)-1, this._search.indexOf(temp))) + temp, '') : '';
+            var params = this._search.indexOf(temp) > -1 ? this._search.replace((this._search.substring(this._search.indexOf(temp) - 1, this._search.indexOf(temp))) + temp, '') : '';
             this._search = params ? '#' + params.substr(1) : '#';
             this._join();
         }
