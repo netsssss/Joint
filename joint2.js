@@ -38,11 +38,12 @@ var joint2 = {
     },
     all: function () {
         this._init();
-        var list = this._search ? this._search == '#' ? [] : this._search.substr(1).split('&') : [], map = {};
+        var list = this._search ? this._search == '#' ? [] : this._search.substr(1).split('&') : [], map = {}, flag = false;
         for (var i = 0; i < list.length; i++) {
             map[decodeURI(unescape(list[i].split('=')[0]))] = decodeURI(unescape(list[i].split('=')[1]))
         }
-        if (Object.keys(map).length > 0) return map; return null;
+        for (i in map) {flag = true; break;};
+        if(flag) return map; return null;
     },
     clear: function () {
         this._search = '#';

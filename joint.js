@@ -15,7 +15,7 @@ var joint = {
             var temp = encodeURI(encodeURI(name)) + '=' + encodeURI(encodeURI(this.get(name)));
             var params = window.location.search.indexOf(temp) > -1 ?
                 window.location.search.replace((window.location.search.substring(window.location.search.indexOf(temp) - 1, window.location.search.indexOf(temp))) + temp, '') : '';
-            params ? window.location.search = '?' + params.substr(1) : window.location = window.location.pathname;
+                window.location.search = params ? '?' + params.substr(1) : '';
         }
     },
     replace: function (name, param) {
@@ -36,9 +36,10 @@ var joint = {
         for (var i = 0; i < list.length; i++) {
             map[decodeURI(unescape(list[i].split('=')[0]))] = decodeURI(unescape(list[i].split('=')[1]))
         }
-        if (Object.keys(map).length > 0) return map; return null;
+        for (i in map) {flag = true; break;};
+        if(flag) return map; return null;
     },
     clear: function () {
-        window.location = window.location.pathname;
+        window.location.search = '';
     }
 }
