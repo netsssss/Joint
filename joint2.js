@@ -31,9 +31,18 @@ var joint2 = {
         }
     },
     get: function (name) {
+        this._init();
         var reg = new RegExp("(^|&)" + encodeURI(encodeURI(name)) + "=([^&]*)(&|$)");
-        var r = window.location.href.substr(window.location.href.indexOf('#') + 1).match(reg);
+        var r = this._search.substr(1).match(reg);
         if (r != null) return decodeURI(unescape(r[2])); return null;
+    },
+    all: function () {
+        this._init();
+        var list = this._search ? this._search == '#' ? [] : this._search.substr(1).split('&') : [], map = {};
+        for (var i = 0; i < list.length; i++) {
+            map[decodeURI(unescape(list[i].split('=')[0]))] = decodeURI(unescape(list[i].split('=')[1]))
+        }
+        if (Object.keys(map).length > 0) return map; return null;
     },
     clear: function () {
         this._search = '#';
