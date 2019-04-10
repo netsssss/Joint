@@ -1,6 +1,6 @@
 "use strict";
 /**
- * update on 2019/4/8
+ * update on 2019/4/10
  * create from Xu
  */
 var joint = {
@@ -32,7 +32,7 @@ var joint = {
         if (r != null) return decodeURI(unescape(r[2])); return null;
     },
     all: function () {
-        var list = window.location.search ? window.location.search.substr(1).split('&') : [], map = {};
+        var list = window.location.search ? window.location.search.substr(1).split('&') : [], map = {}, flag = false;
         for (var i = 0; i < list.length; i++) {
             map[decodeURI(unescape(list[i].split('=')[0]))] = decodeURI(unescape(list[i].split('=')[1]))
         }
@@ -40,6 +40,6 @@ var joint = {
         if(flag) return map; return null;
     },
     clear: function () {
-        window.location.search = '';
+        window.location.href = window.location.href.replace(window.location.href.substr(window.location.href.indexOf('?'), window.location.search.length), '');
     }
 }
