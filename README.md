@@ -13,6 +13,7 @@ joint.add('name','param')       //添加参数
 joint.remove('name')            //移除参数
 joint.replace('name','param')   //替换参数
 joint.get('name')               //获得参数值
+joint.all()                     //获得所有参数(返回对象)
 joint.clear()                   //清空参数
 ```
 joint2.js:
@@ -21,5 +22,6 @@ joint2.add('name','param')       //添加参数
 joint2.remove('name')            //移除参数
 joint2.replace('name','param')   //替换参数
 joint2.get('name')               //获得参数值
+joint2.all()                     //获得所有参数(返回对象)
 joint2.clear()                   //清空参数
 ```
