@@ -3,7 +3,7 @@
  * update on 2019/4/10
  * create from Xu
  */
-var joint = {
+var joint2 = {
     add: function (name, param) {
         if (!this.get(name)) {
             var theParam = encodeURI(encodeURI(name)) + '=' + encodeURI(encodeURI(param));
